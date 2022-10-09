@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Form, Button } from "react-bootstrap";
+import ListaDelclima from "./ListaDelclima";
 
 const Formulario = () => {
   const [ubicacion, setUbicacion] = useState("");
@@ -10,17 +11,22 @@ const Formulario = () => {
 
   useEffect(()=>{
    consultarApi()
-  },[ubicacion,pais])
+  },[])
 
   const consultarApi = async()=>{
-    const respuesta = await fetch("http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=43d81ec26d29e1c2ce80bbdcd7bc714f");
-    const dato = await respuesta.json();
-    setArregloClima(dato)
+    try{
+      const respuesta = await fetch("https://api.openweathermap.org/data/2.5/weather?q=Tucuman&appid=43d81ec26d29e1c2ce80bbdcd7bc714f&lang=sp,es");
+      const dato = await respuesta.json();
+      setArregloClima([dato])
+
+    }catch(error){
+      console.log(error)
+    }
+
     
   }
 
-  const handleSubmit = ()=>{
-  }
+ 
 
   return (
     <div>
@@ -29,7 +35,7 @@ const Formulario = () => {
         <hr />
       </div>
       <div>
-        <Form className="d-flex justify-content-center">
+        <Form className="d-flex justify-content-center my-5">
           <div className="w-75">
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Ubicacion</Form.Label>
@@ -57,7 +63,7 @@ const Formulario = () => {
           </div>
         </Form>
       </div>
-      <Formulario/>
+      <ListaDelclima arregloClima={arregloClima}/>
     </div>
   );
 };

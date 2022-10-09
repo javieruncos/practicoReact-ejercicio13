@@ -1,16 +1,18 @@
 import React from "react";
-import { Col } from "react-bootstrap";
+import { Col,Card,Button} from "react-bootstrap";
 
-const Clima = () => {
+const Clima = ({item,nombre,weather}) => {
   return (
     <Col md={12}>
-      <Card style={{ width: "18rem" }}>
+      <Card >
         <Card.Img variant="top" src="holder.js/100px180" />
         <Card.Body>
-          <Card.Title>Card Title</Card.Title>
+          <Card.Title>{nombre}</Card.Title>
           <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            <p>Humedad:  {item.humidity}</p>
+            <p>Humedad:  {weather.description}</p>
+            <p>Humedad:  {weather.icon}</p>
+           
           </Card.Text>
           <Button variant="primary">Go somewhere</Button>
         </Card.Body>
