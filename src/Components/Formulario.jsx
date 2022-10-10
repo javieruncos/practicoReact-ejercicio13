@@ -16,10 +16,13 @@ const Formulario = () => {
       );
       const dato = await respuesta.json();
       setArregloClima([dato]);
-      console.log(dato);
+     
     } catch (error) {
-      console.log(error);
+      console.log(error)
     }
+
+    setUbicacion("")
+    setPais("")
   };
 
   return (

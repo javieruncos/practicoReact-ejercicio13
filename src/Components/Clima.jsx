@@ -8,7 +8,7 @@ const Clima = ({ item }) => {
       <Card>
         <Card.Body>
           <div className="d-flex justify-content-between ">
-            <Card.Title className="my-2 ms-3 titulo">{item.name}</Card.Title>
+            <Card.Title className="my-2 ms-3 display">{item.name}</Card.Title>
             <div className="circuloPais bg-success">
               <h4>{item.sys.country}</h4>
             </div>
@@ -21,9 +21,6 @@ const Clima = ({ item }) => {
               <li>Temperatura-min: °{item.main.temp_min}</li>
               <li>Temperatura-min: °{item.sys.country}</li>
             </ul>
-          </div>
-          <div className="d-flex justify-content-center">
-          <Button variant="warning">Go somewhere</Button>
           </div>
         </Card.Body>
       </Card>
