@@ -6,9 +6,8 @@ const ListaDelclima = ({arregloClima}) => {
     return (
         <Row>
           {
-            arregloClima.map((item,indice)=> <Clima  item={item.main}  weather={item.weather[0]}  nombre={item.name} key={indice}/>)
+            arregloClima.map((item,indice)=> <Clima  item={item} key={indice}/>)
           }
-        
         </Row>
     );
 };
