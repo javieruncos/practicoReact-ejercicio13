@@ -1,7 +1,7 @@
 import { Container } from "react-bootstrap";
 import Formulario from "./Components/Formulario";
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Swal from "sweetalert2";
+
 
 
 function App() {
